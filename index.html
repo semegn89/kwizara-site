@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>KWIZARA TRADING — Części & Komponenty (B2B • C2B)</title>
-<meta name="description" content="KWIZARA TRADING Sp. z o.o. — B2B/C2B dostawy części i komponentów: rolnictwo, sprzęt specjalistyczny. Wyszukaj po VIN/OEM. Warszawa." />
+<meta name="description" content="KWIZARA TRADING  — B2B/C2B dostawy części i komponentów: rolnictwo, sprzęt specjalistyczny. Wyszukaj po VIN/OEM. Warszawa." />
 <meta property="og:title" content="KWIZARA TRADING — Parts & Components (B2B • C2B)" />
 <meta property="og:description" content="VIN / OEM search, catalogs, suppliers. Company details (KRS/NIP/REGON)." />
 <meta property="og:type" content="website" />
@@ -137,7 +137,7 @@
 <script>
   // ===== Конфиг компании =====
   const companyConfig = {
-    brand:{ name:"KWIZARA TRADING Sp. z o.o.", tagline:{pl:"Oryginały i sprawdzone analogi — B2B/C2B dostawy EU", en:"Originals & verified analogs — B2B/C2B EU supply"} },
+    brand:{ name:"KWIZARA TRADING ", tagline:{pl:"Oryginały i sprawdzone analogi — B2B/C2B dostawy EU", en:"Originals & verified analogs — B2B/C2B EU supply"} },
     legal:{ krs:"0001170951", nip:"5273162595", regon:"541643207", address:"Al. Jana Pawła II 11, lok. 209, 00-828 Warszawa, Polska", pkd_main:{pl:"47.82.Z — Sprzedaż detaliczna części i akcesoriów do pojazdów (bez motocykli)", en:"47.82.Z — Retail sale of parts and accessories for motor vehicles (excluding motorcycles)"}, capital_pln:"5 000,00", management:"Zarząd jednoosobowy — Członek: Stella Beleeva" },
     contacts:{ email:"info@kwizara.eu", phone:"+48734974950", hours:{pl:"Pn–Pt 9:00–18:00", en:"Mon–Fri 9:00–18:00"}, domain:"kwizara.eu" },
     catalog:{ 
@@ -292,7 +292,9 @@
   }
 
   document.addEventListener('DOMContentLoaded', ()=>{
-    document.getElementById('brandName').textContent = companyConfig.brand.name;
+    const brandDisplay = (companyConfig.brand.name||'').replace(/\s*Sp\. z\. o\. o\./i,'').trim() || 'KWIZARA TRADING';
+    document.getElementById('brandName').textContent = brandDisplay;
+    const bnf = document.getElementById('brandNameFoot'); if(bnf) bnf.textContent = brandDisplay;
     document.getElementById('addr').textContent = companyConfig.legal.address;
     document.getElementById('krs').textContent = companyConfig.legal.krs;
     document.getElementById('nip').textContent = companyConfig.legal.nip;
@@ -309,6 +311,17 @@
     document.getElementById('hours').textContent = companyConfig.contacts.hours.pl;
     document.getElementById('tagline').textContent = companyConfig.brand.tagline.pl;
 
+    // Mirror values into footer placeholders
+    const setText = (id, val)=>{ const el=document.getElementById(id); if(el) el.textContent = val; };
+    setText('krsFoot',   companyConfig.legal.krs);
+    setText('nipFoot',   companyConfig.legal.nip);
+    setText('regonFoot', companyConfig.legal.regon);
+    setText('addrFoot',  companyConfig.legal.address);
+    setText('emailFoot', companyConfig.contacts.email);
+    setText('phoneFoot', companyConfig.contacts.phone);
+    const elf = document.getElementById('emailLinkFoot'); if(elf){ elf.href = `mailto:${companyConfig.contacts.email}`; }
+    const plf = document.getElementById('phoneLinkFoot'); if(plf){ plf.href = `tel:${companyConfig.contacts.phone.replace(/\s|-/g,'')}`; }
+
     renderCats();
     
 
@@ -324,6 +337,19 @@
     const TITLES_EN = ["Brake disc","Brake pads","Oil filter","Injector","Radiator","Shock absorber","Water pump","Ignition coil","Clutch","Alternator"];
     const CATS_PL = companyConfig.catalog.popular_pl;
     const CATS_EN = companyConfig.catalog.popular_en;
+    // One image per category (EN keys)
+    const CATEGORY_IMAGES = {
+      'Brakes': 'https://images.unsplash.com/photo-1581089781785-eab24e2f4b01?q=80&w=1200&auto=format&fit=crop',
+      'Suspension': 'https://images.unsplash.com/photo-1602321058467-2a2a8e3f4e5e?q=80&w=1200&auto=format&fit=crop',
+      'Filters': 'https://images.unsplash.com/photo-1605719124118-0d61b2257bd3?q=80&w=1200&auto=format&fit=crop',
+      'Engine': 'https://images.unsplash.com/photo-1518306727298-4c17e1bf8d8b?q=80&w=1200&auto=format&fit=crop',
+      'Electrical': 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=1200&auto=format&fit=crop',
+      'Body': 'https://images.unsplash.com/photo-1512406926044-444d1ef55b05?q=80&w=1200&auto=format&fit=crop',
+      'Cooling': 'https://images.unsplash.com/photo-1606925797300-16b4374c1c1e?q=80&w=1200&auto=format&fit=crop',
+      'Clutch': 'https://images.unsplash.com/photo-1607860108855-0a2e2f730ff2?q=80&w=1200&auto=format&fit=crop',
+      'Steering': 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1200&auto=format&fit=crop',
+      'Timing': 'https://images.unsplash.com/photo-1519638399535-1b036603ac77?q=80&w=1200&auto=format&fit=crop'
+    };
     const products = [];
     let pageSize = 24; let currentPage = 1; let currentList = [];
     function pad(n,len){return String(n).padStart(len,'0');}
@@ -336,7 +362,7 @@
       products.push({
         id:i, sku, cat_pl:CATS_PL[catIdx], cat_en:CATS_EN[catIdx],
         title_pl:TITLES_PL[tIdx], title_en:TITLES_EN[tIdx],
-        img: imgFor({ sku, title_en: TITLES_EN[tIdx] }, tIdx),
+        img: (CATEGORY_IMAGES[CATS_EN[catIdx]] || imgFor({ sku, title_en: TITLES_EN[tIdx], cat_en: CATS_EN[catIdx] }, tIdx)),
         price, tags: (i%3===0?["OEM","EU Stock"]:(i%3===1?["Analog","Budget"]:["OEM"]))
       });
     }
@@ -862,7 +888,7 @@
           <div class="small" id="taglineFoot">B2B/C2B EU supply</div>
         </div>
       </div>
-      <div class="small" style="margin-top:8px">KRS: <span id="krs"></span> • NIP: <span id="nip"></span> • REGON: <span id="regon"></span></div>
+      <div class="small" style="margin-top:8px">KRS: <span id="krsFoot"></span> • NIP: <span id="nipFoot"></span> • REGON: <span id="regonFoot"></span></div>
       <div class="small">© <span id="year"></span> KWIZARA TRADING</div>
     </div>
     <div>
@@ -874,12 +900,12 @@
     </div>
     <div>
       <b>Adres</b>
-      <div class="small" id="addr"> </div>
+      <div class="small" id="addrFoot"></div>
     </div>
     <div>
       <b data-i18n="nav_contact">Kontakt</b>
-      <div class="small">Email: <a id="emailLink" href="#"><span id="email"></span></a></div>
-      <div class="small">Tel.: <a id="phoneLink" href="#"><span id="phone"></span></a></div>
+      <div class="small">Email: <a id="emailLinkFoot" href="#"><span id="emailFoot"></span></a></div>
+      <div class="small">Tel.: <a id="phoneLinkFoot" href="#"><span id="phoneFoot"></span></a></div>
     </div>
   </div>
 </footer>
