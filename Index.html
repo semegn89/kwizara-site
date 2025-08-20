@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>KWIZARA TRADING — Części & Komponenty (B2B • C2B)</title>
+<meta name="description" content="KWIZARA TRADING  — B2B/C2B dostawy części i komponentów: rolnictwo, sprzęt specjalistyczny. Wyszukaj po VIN/OEM. Warszawa." />
+<meta property="og:title" content="KWIZARA TRADING — Parts & Components (B2B • C2B)" />
+<meta property="og:description" content="VIN / OEM search, catalogs, suppliers. Company details (KRS/NIP/REGON)." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.kwizara.eu" />
+<link rel="canonical" href="https://www.kwizara.eu/" />
+<meta property="og:image" content="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='1200' height='630'><rect fill='%23101628' width='100%' height='100%'/><text x='60' y='320' fill='white' font-family='Arial' font-size='72'>KWIZARA TRADING</text></svg>" />
+<style>
+  :root{
+    --bg:#0b0f19; --bg2:#0f1424; --card:#111831; --ink:#e8ecf7; --muted:#a7b0c7; --stroke:rgba(255,255,255,.08);
+    --brand:#4cc9f0; --brand2:#4361ee; --ok:#22c55e; --warn:#f59e0b; --radius:14px; --shadow:0 10px 30px rgba(0,0,0,.35);
+  }
+  html,body{background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial}
+  *{box-sizing:border-box}
+  a{color:var(--ink);text-decoration:none}
+  .container{max-width:1200px;margin:0 auto;padding:0 20px}
+  header{position:sticky;top:0;z-index:50;backdrop-filter:blur(10px);background:linear-gradient(180deg,rgba(11,15,25,.9),rgba(11,15,25,.6));border-bottom:1px solid var(--stroke)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:800}
+  .logo-badge{width:36px;height:36px;border-radius:10px;background:radial-gradient(120% 120% at 80% 0%,var(--brand) 0%,var(--brand2) 35%,#1f2a59 100%);display:grid;place-items:center;border:1px solid var(--stroke);box-shadow:var(--shadow)}
+  .logo-badge svg{width:20px}
+  .nav-links{display:flex;gap:16px;flex-wrap:wrap;align-items:center}
+  .nav-links a{padding:8px 10px;border-radius:10px;color:var(--muted)}
+  .nav-links a:hover{background:rgba(255,255,255,.06);color:var(--ink)}
+  .actions{display:flex;gap:8px;flex-wrap:wrap}
+  .btn{border:1px solid var(--stroke);background:rgba(255,255,255,.06);padding:10px 14px;border-radius:12px;cursor:pointer}
+  .btn:hover{background:#182043}
+  .btn.brand{background:linear-gradient(135deg,var(--brand2),var(--brand));border:none}
+  .lang{display:flex;gap:6px}
+  .lang button{border:1px solid var(--stroke);background:transparent;color:var(--muted);padding:8px 10px;border-radius:10px;cursor:pointer}
+  .lang button.active{background:linear-gradient(135deg,#1b2242,#121a33);color:var(--ink)}
+  section{padding:40px 0}
+  .hero{border-bottom:1px solid var(--stroke)}
+  .hero-wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:32px;padding:40px 0}
+  @media (max-width:1000px){.hero-wrap{grid-template-columns:1fr}}
+  .chip{display:inline-flex;gap:8px;align-items:center;padding:8px 12px;border-radius:20px;background:linear-gradient(180deg,#0f152a,#0b1022);border:1px solid var(--stroke);color:var(--muted);font-size:14px}
+  .hero h1{font-size:clamp(28px,3.4vw,46px);line-height:1.05;margin:12px 0}
+  .hero p{color:var(--muted)}
+  .input{display:flex;align-items:center;gap:10px;padding:12px 14px;border-radius:12px;background:#0f142a;border:1px solid var(--stroke);}
+  .input input{all:unset;flex:1;color:var(--ink)}
+  .form-row{display:grid;grid-template-columns:1fr auto;gap:10px;margin-top:12px}
+  .help{font-size:13px;color:var(--muted);margin-top:6px}
+  .hero-card{border:1px solid var(--stroke);background:radial-gradient(120% 100% at 80% 0%,rgba(76,201,240,.08),rgba(67,97,238,.05) 40%,rgba(255,255,255,.02) 100%);border-radius:var(--radius);padding:18px}
+  .gauge{height:140px;border-radius:16px;background:conic-gradient(from -90deg,var(--brand) 0 45%,#293255 45% 100%);display:grid;place-items:center;border:1px solid var(--stroke)}
+  .gauge span{font-weight:800;font-size:28px}
+  /* HERO image */
+  .hero-img{aspect-ratio:16/10;border-radius:14px;overflow:hidden;border:1px solid var(--stroke);margin-top:12px}
+  .hero-img img{width:100%;height:100%;object-fit:cover;display:block}
+  .hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+  .kpi{padding:14px;border:1px solid var(--stroke);border-radius:12px;background:#0f1424}
+  .kpi .v{font-weight:800;font-size:20px}
+  .kpi .l{font-size:12px;color:var(--muted)}
+  .section-head{display:flex;align-items:end;justify-content:space-between;margin-bottom:16px}
+  .section-head h2{margin:0;font-size:clamp(22px,2.4vw,32px)}
+  .cat-scroll{display:flex;gap:10px;overflow:auto;padding-bottom:6px;scrollbar-width:thin}
+  .pill{white-space:nowrap;border:1px solid var(--stroke);background:#0d1222;color:var(--muted);padding:10px 12px;border-radius:999px;cursor:pointer}
+  .pill.active,.pill:hover{color:var(--ink);background:linear-gradient(135deg,#1b2242,#131a32)}
+  .catalog{display:grid;grid-template-columns:260px 1fr;gap:20px}
+  @media (max-width:1000px){.catalog{grid-template-columns:1fr}}
+  .filters{border:1px solid var(--stroke);border-radius:var(--radius);padding:14px;background:var(--card)}
+  .filters h3{margin:2px 2px 10px;font-size:16px}
+  .group{border-top:1px dashed var(--stroke);padding:10px 0}
+  .group:first-child{border-top:none}
+  .check{display:flex;gap:8px;align-items:center;margin:6px 0;font-size:14px;color:var(--muted)}
+  .check input{accent-color:var(--brand)}
+  /* aligned price inputs */
+  .range{display:grid; grid-template-columns:1fr 1fr; gap:10px}
+  .range input{width:100%}
+  .grid{--cols:4;display:grid;grid-template-columns:repeat(var(--cols),minmax(0,1fr));gap:16px}
+  @media (max-width:1200px){.grid{--cols:3}}@media (max-width:820px){.grid{--cols:2}}@media (max-width:540px){.grid{--cols:1}}
+  .card{position:relative;overflow:hidden;border:1px solid var(--stroke);border-radius:16px;background:linear-gradient(180deg,#141a2e,#0f1426);transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+  .card:hover{transform:translateY(-4px);border-color:#2952ff66;box-shadow:var(--shadow)}
+  .thumb{aspect-ratio:16/10;width:100%;background:radial-gradient(150% 120% at 100% 0%,rgba(76,201,240,.18),rgba(67,97,238,.1) 35%,transparent 70%),linear-gradient(135deg,#0b0f1d,#0b0f1d);display:grid;place-items:center;border-bottom:1px solid var(--stroke);overflow:hidden}
+  .thumb svg{width:64px;opacity:.9}
+  .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+  .meta{padding:12px}
+  .sku{font-size:12px;color:var(--muted)}
+  .title{font-weight:700;margin:6px 0 4px}
+  .price{font-weight:800;letter-spacing:.3px}
+  .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+  .tag{font-size:12px;padding:6px 8px;border-radius:20px;background:#0b1022;border:1px solid var(--stroke);color:var(--muted)}
+  .row{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:10px}
+  .mini{padding:8px 10px;border-radius:10px;border:1px solid var(--stroke);background:transparent;color:var(--ink);font-size:14px;cursor:pointer}
+  .mini.brand{background:linear-gradient(135deg,var(--brand2),var(--brand));border:none}
+  .pill[aria-pressed="true"]{outline:2px solid var(--brand2)}
+  .steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+  @media (max-width:900px){.steps{grid-template-columns:1fr}}
+  .step{padding:16px;border-radius:16px;border:1px solid var(--stroke);background:var(--card)}
+  .brandwall{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px}
+  @media (max-width:1000px){.brandwall{grid-template-columns:repeat(3,1fr)}}
+  @media (max-width:520px){.brandwall{grid-template-columns:repeat(2,1fr)}}
+  .brand{height:64px;display:grid;place-items:center;border:1px dashed var(--stroke);border-radius:12px;color:var(--muted);background:linear-gradient(180deg,#0e1426,#0b0f1d)}
+  .overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);display:none;z-index:80}
+  .drawer,.modal{position:fixed;z-index:90;display:none;background:var(--bg2);border:1px solid var(--stroke);border-radius:18px;box-shadow:var(--shadow)}
+  .drawer{right:20px;top:20px;bottom:20px;width:min(420px,92vw);padding:14px}
+  .modal{left:50%;top:52%;transform:translate(-50%,-50%);width:min(760px,96vw)}
+  .modal header{padding:12px 16px;border-bottom:1px solid var(--stroke)}
+  .modal .inner{padding:18px}
+  .modal .foot{border-top:1px solid var(--stroke);padding:12px 16px;display:flex;justify-content:flex-end;gap:10px}
+  .tabs{display:flex;gap:8px;padding:12px}
+  .tab{padding:10px 12px;border:1px solid var(--stroke);border-radius:10px;color:var(--muted);cursor:pointer}
+  .tab.active{background:linear-gradient(135deg,#1c2344,#111933);color:var(--ink)}
+  .form{display:grid;gap:10px;padding:12px}
+  .field{display:grid;gap:6px}
+  .field label{font-size:13px;color:var(--muted)}
+  .field input, .field textarea{padding:12px;border-radius:10px;border:1px solid var(--stroke);background:#0f1322;color:var(--ink)}
+  footer{border-top:1px solid var(--stroke);margin-top:28px;background:#0c1120}
+  .footgrid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:16px;padding:24px 0}
+  @media (max-width:900px){.footgrid{grid-template-columns:1fr 1fr}}@media (max-width:520px){.footgrid{grid-template-columns:1fr}}
+  .small{font-size:13px;color:var(--muted)}
+  .badge{color:#99f6a8;background:#15301f;border:1px solid #254d33;padding:4px 8px;border-radius:999px;font-size:12px}
+  .toolbar{display:flex;gap:10px;align-items:center;justify-content:space-between;margin-bottom:10px}
+  .toolbar .search{flex:1}
+  .pagesize .ps.active{background:linear-gradient(135deg,var(--brand2),var(--brand));border:none}
+  .badge-count{display:inline-flex;min-width:18px;height:18px;border-radius:999px;background:var(--brand2);color:#fff;align-items:center;justify-content:center;font-size:12px;margin-left:6px;padding:0 6px}
+  [hidden]{display:none!important}
+  .pager{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:16px}
+  .page-btn{border:1px solid var(--stroke);background:#0d1222;color:var(--muted);padding:10px 12px;border-radius:10px;cursor:pointer}
+  .page-btn[aria-current="true"], .page-btn:hover{background:linear-gradient(135deg,#1b2242,#131a32);color:var(--ink)}
+  .page-btn[disabled]{opacity:.5;cursor:not-allowed}
+  .ellipsis{padding:10px 6px;color:var(--muted)}
+  @media (max-width:900px){
+    .nav{flex-wrap:wrap; row-gap:8px}
+    .logo{order:1}
+    .actions{order:2; width:100%; justify-content:space-between}
+    .nav-links{order:3; width:100%; justify-content:center}
+  }
+</style>
+</head>
+<body>
+<script>
+  // ===== Конфиг компании =====
+  const companyConfig = {
+    brand:{ name:"KWIZARA TRADING ", tagline:{pl:"Oryginały i sprawdzone analogi — B2B/C2B dostawy EU", en:"Originals & verified analogs — B2B/C2B EU supply"} },
+    legal:{ krs:"0001170951", nip:"5273162595", regon:"541643207", address:"Al. Jana Pawła II 11, lok. 209, 00-828 Warszawa, Polska", pkd_main:{pl:"47.82.Z — Sprzedaż detaliczna części i akcesoriów do pojazdów (bez motocykli)", en:"47.82.Z — Retail sale of parts and accessories for motor vehicles (excluding motorcycles)"}, capital_pln:"5 000,00", management:"Zarząd jednoosobowy — Członek: Stella Beleeva" },
+    contacts:{ email:"info@kwizara.eu", phone:"+48734974950", hours:{pl:"Pn–Pt 9:00–18:00", en:"Mon–Fri 9:00–18:00"}, domain:"kwizara.eu" },
+    catalog:{ 
+  popular_pl:["Hamulce","Zawieszenie","Filtry","Silnik","Elektryka","Nadwozie","Chłodzenie","Sprzęgło","Układ kierowniczy","Rozrząd"],
+  popular_en:["Brakes","Suspension","Filters","Engine","Electrical","Body","Cooling","Clutch","Steering","Timing"],
+  all_pl:[
+    "Hamulce","Zawieszenie","Filtry","Silnik","Elektryka","Zapłon","Chłodzenie","Sprzęgło","Układ kierowniczy","Napęd","Nadwozie","Oświetlenie","Hydraulika","WOM","Filtry ciężkie","Układ paliwowy"
+  ],
+  all_en:[
+    "Brakes","Suspension","Filters","Engine","Electrical","Ignition","Cooling","Clutch","Steering","Drivetrain","Body","Lighting","Hydraulics","PTO","Heavy-duty filters","Fuel system"
+  ]
+},
+    partners:{ pl:[
+      {name:"2407.pl",url:"https://2407.pl"},
+      {name:"Moto-Profil",url:"https://moto-profil.pl"},
+      {name:"Auto Partner S.A.",url:"https://autopartner.com"},
+      {name:"INTER-TEAM",url:"https://inter-team.com.pl"},
+      {name:"Inter Cars",url:"https://intercars.com.pl"},
+      {name:"Elit Polska",url:"https://elitpolska.pl"}
+    ], de:[
+      {name:"Orient Global GmbH",url:"https://orient-global-gmbh.net"},
+      {name:"KonPart",url:"https://www.konpart.de"},
+      {name:"RAC Germany",url:"https://www.rac-germany.com"},
+      {name:"Kivi Parts GmbH",url:"https://www.kivi-parts.com"},
+      {name:"German Industry Parts",url:"https://www.germanindustryparts.com"},
+      {name:"OEM Motorparts Germany",url:"https://oem-motorparts.com"},
+      {name:"MachineryParts.de",url:"https://www.machineryparts.de"}
+    ] },
+    ui:{ languages:["pl","en"], primaryColor:"#4361ee", accentColor:"#4cc9f0", defaultLang:"pl" }
+  };
+
+  // ===== Image provider (unique images without manual uploads)
+  const imageProvider = { mode: 'autoparts' }; // 'autoparts' | 'seed' | 'text' | 'unsplash'
+  const UNSPLASH_SET = [
+    'https://images.unsplash.com/photo-1581091870633-1eea3a3a04fa?q=80&w=1200&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?q=80&w=1200&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1580894908360-8e8c6f8b7a7a?q=80&w=1200&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1563720223185-11003d5163d4?q=80&w=1200&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1605647531738-3f3a9bea737d?q=80&w=1200&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1592853625600-3f0b6d818572?q=80&w=1200&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1607860108855-0a2e2f730ff2?q=80&w=1200&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1572982669671-4a4b5f3e30f1?q=80&w=1200&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1581094651181-3592e1d9e2b2?q=80&w=1200&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1614352268950-a3e74664f795?q=80&w=1200&auto=format&fit=crop'
+  ];
+  function hashCode(str){
+    let h = 0; for(let i=0;i<str.length;i++){ h = ((h<<5)-h) + str.charCodeAt(i); h |= 0; }
+    return Math.abs(h);
+  }
+  function tagsFor(titleEn, catEn){
+    const t = (titleEn||'').toLowerCase();
+    const c = (catEn||'').toLowerCase();
+    if(t.includes('brake')) return 'car,brake,brake-disc,autoparts';
+    if(t.includes('pad')) return 'car,brake,pads,autoparts';
+    if(t.includes('filter')) return 'car,oil-filter,engine,autoparts';
+    if(t.includes('injector')) return 'car,injector,engine,autoparts';
+    if(t.includes('radiator')) return 'car,radiator,cooling,autoparts';
+    if(t.includes('shock')) return 'car,suspension,shock-absorber,autoparts';
+    if(t.includes('pump')) return 'car,water-pump,engine,autoparts';
+    if(t.includes('coil')) return 'car,ignition,engine,autoparts';
+    if(t.includes('clutch')) return 'car,clutch,gearbox,autoparts';
+    if(t.includes('alternator')) return 'car,alternator,electrical,autoparts';
+    if(c.includes('suspension')) return 'car,suspension,repair,autoparts';
+    if(c.includes('engine')) return 'car,engine,garage,autoparts';
+    if(c.includes('electrical')) return 'car,electrical,wiring,autoparts';
+    if(c.includes('cooling')) return 'car,cooling,radiator,autoparts';
+    if(c.includes('steering')) return 'car,steering,wheel,autoparts';
+    if(c.includes('timing')) return 'car,timing-belt,engine,autoparts';
+    return 'car,auto-part,mechanic,workshop';
+  }
+  function imgFor(p, tIdx){
+    if(imageProvider.mode==='autoparts'){
+      // Car parts from loremflickr with stable lock per SKU
+      const tags = tagsFor(p.title_en, p.cat_en);
+      const lock = hashCode(p.sku);
+      return `https://loremflickr.com/800/500/${encodeURIComponent(tags)}?lock=${lock}`;
+    }
+    if(imageProvider.mode==='seed'){
+      // Unique placeholder per SKU via picsum
+      return `https://picsum.photos/seed/${encodeURIComponent(p.sku)}/800/500`;
+    }
+    if(imageProvider.mode==='text'){
+      // Text placeholder with product title
+      const text = encodeURIComponent((p.title_en||'Part').slice(0,28));
+      return `https://placehold.co/800x500?text=${text}`;
+    }
+    // default unsplash set mapped by title index
+    return UNSPLASH_SET[tIdx % UNSPLASH_SET.length];
+  }
+
+  // ===== i18n =====
+  const t = { 
+    pl:{ nav_vin:"VIN/OEM", nav_cat:"Katalogi", nav_how:"Jak to działa", nav_sup:"Dostawcy", nav_contact:"Kontakt",
+      hero_chip:"Sklep części • B2B & C2B • EU dostawy", hero_h1:"Znajdujemy części po VIN i OEM w sekundy",
+      hero_p:"Wpisz VIN/Frame lub numer OEM – pokażemy oryginał i sprawdzone odpowiedniki.",
+      hero_vin_ph:"Np.: WDB9066331S123456 (max 17 znaków)", hero_btn:"Szukaj po VIN",
+      hero_help:"Obsługa VIN (EU/US), Frame (JP), numer OEM.",
+      cats_h2:"Popularne kategorie", catalog_h2:"Katalog produktów", filters:"Filtry", f_category:"Kategoria",
+      f_brand:"Marka", f_price:"Cena", grid_demo_note:"",
+      how_h2:"Jak to działa", how_1:"1) Podajesz VIN lub zapytanie (B2B/C2B)", how_2:"2) Dobieramy oryginał/analog, terminy i ofertę",
+      how_3:"3) Dostawa/odbiór: EXW • FCA • DAP", sup_h2:"Planowani dostawcy (PL/DE)",
+      about_h2:"O spółce", about_p:"KWIZARA TRADING Sp. z o.o. — polska spółka handlowa (B2B/C2B) zaopatrzenia i dostaw części oraz komponentów do maszyn rolniczych i sprzętu specjalistycznego. Współpracujemy ze sprawdzonymi hurtowniami z Polski i Niemiec, realizując sprzedaż transgraniczną w UE.",
+      legal_title:"Informacje prawne", contact_h2:"Kontakt", form_h:"Zostaw zapytanie", form_name:"Imię i nazwisko",
+      form_email:"E-mail", form_msg:"Treść zapytania", form_send:"Wyślij",
+      footer_title:"Szybkie linki", policy:"Polityka prywatności", terms:"Regulamin", returns:"Zwroty i reklamacje",
+      cart:"Koszyk", search:"Szukaj", account:"Konto" },
+    en:{ nav_vin:"VIN/OEM", nav_cat:"Catalogs", nav_how:"How it works", nav_sup:"Suppliers", nav_contact:"Contacts",
+      hero_chip:"Parts store • B2B & C2B • EU deliveries", hero_h1:"Find parts by VIN & OEM in seconds",
+      hero_p:"Enter VIN/Frame or OEM number — we show originals and verified alternatives.",
+      hero_vin_ph:"e.g. WDB9066331S123456 (max 17 chars)", hero_btn:"Search VIN",
+      hero_help:"Supports VIN (EU/US), Frame (JP), OEM number.",
+      cats_h2:"Popular categories", catalog_h2:"Product catalog", filters:"Filters", f_category:"Category",
+      f_brand:"Brand", f_price:"Price", grid_demo_note:"",
+      how_h2:"How it works", how_1:"1) You provide VIN or inquiry (B2B/C2B)", how_2:"2) We match original/analog, lead time & quote",
+      how_3:"3) Delivery/pickup: EXW • FCA • DAP", sup_h2:"Planned suppliers (PL/DE)",
+      about_h2:"About the company", about_p:"KWIZARA TRADING Sp. z o.o. is a Polish B2B/C2B trading company supplying parts and components for agricultural machinery and specialist equipment. We work with verified wholesalers in Poland and Germany, providing cross-border sales within the EU.",
+      legal_title:"Legal information", contact_h2:"Contact", form_h:"Send a request", form_name:"Full name",
+      form_email:"Email", form_msg:"Message", form_send:"Send",
+      footer_title:"Quick links", policy:"Privacy policy", terms:"Terms", returns:"Returns & warranty",
+      cart:"Cart", search:"Search", account:"Account" }
+  };
+
+  function renderCats(){
+    const cats = document.getElementById('catPills');
+    if(!cats) return;
+    cats.innerHTML = '';
+    const list = (currentLang==='en' ? companyConfig.catalog.popular_en : companyConfig.catalog.popular_pl);
+    list.forEach((c,i)=>{
+      const b=document.createElement('button');
+      b.className='pill'+(i===0?' active':'');
+      b.textContent=c;
+      cats.appendChild(b);
+    });
+  }
+
+  let currentLang = companyConfig.ui.defaultLang;
+
+  function setLang(lang){
+    currentLang = lang; document.documentElement.lang = lang;
+    document.querySelectorAll('[data-i18n]').forEach(el=>{
+      const k = el.getAttribute('data-i18n');
+      if(t[lang] && t[lang][k]) el.textContent = t[lang][k];
+    });
+    const vin = document.getElementById('vinInput');
+    vin && (vin.placeholder = t[lang].hero_vin_ph);
+    const hoursEl = document.getElementById('hours');
+    if(hoursEl){ hoursEl.textContent = (companyConfig.contacts.hours[lang]||companyConfig.contacts.hours.pl); }
+    const tg = document.getElementById('tagline');
+    if(tg){ tg.textContent = (companyConfig.brand.tagline[lang]||companyConfig.brand.tagline.pl); }
+    document.querySelectorAll('.lang button').forEach(b=>b.classList.toggle('active', b.dataset.lang===lang));
+    renderCats();
+    const qse=document.getElementById('quickSearch'); if(qse){ qse.placeholder = (lang==='en' ? 'Search by SKU / name' : 'Szukaj po SKU / nazwie'); }
+    // re-render active account tab under current language
+    const tabs = document.querySelectorAll('#modalAccount .tabs .tab');
+    const activeIdx = Array.from(tabs).findIndex(el=>el.classList.contains('active'));
+    if(activeIdx>-1){ tabs[activeIdx].click(); }
+    applyAllFilters();
+  }
+
+  document.addEventListener('DOMContentLoaded', ()=>{
+    const brandDisplay = (companyConfig.brand.name||'').replace(/\s*Sp\. z\. o\. o\./i,'').trim() || 'KWIZARA TRADING';
+    document.getElementById('brandName').textContent = brandDisplay;
+    const bnf = document.getElementById('brandNameFoot'); if(bnf) bnf.textContent = brandDisplay;
+    document.getElementById('addr').textContent = companyConfig.legal.address;
+    document.getElementById('krs').textContent = companyConfig.legal.krs;
+    document.getElementById('nip').textContent = companyConfig.legal.nip;
+    document.getElementById('regon').textContent = companyConfig.legal.regon;
+    document.getElementById('pkd').textContent = companyConfig.legal.pkd_main.pl;
+    document.getElementById('capital').textContent = companyConfig.legal.capital_pln + ' PLN';
+    document.getElementById('mgmt').textContent = companyConfig.legal.management;
+    document.getElementById('email').textContent = companyConfig.contacts.email;
+    document.getElementById('phone').textContent = companyConfig.contacts.phone;
+    // clickable links in footer
+    const el = document.getElementById('emailLink'); if(el){ el.href = `mailto:${companyConfig.contacts.email}`; }
+    const pl = document.getElementById('phoneLink'); if(pl){ pl.href = `tel:${companyConfig.contacts.phone.replace(/\s|-/g,'')}`; }
+    document.getElementById('domain').textContent = companyConfig.contacts.domain;
+    document.getElementById('hours').textContent = companyConfig.contacts.hours.pl;
+    document.getElementById('tagline').textContent = companyConfig.brand.tagline.pl;
+
+    // Mirror values into footer placeholders
+    const setText = (id, val)=>{ const el=document.getElementById(id); if(el) el.textContent = val; };
+    setText('krsFoot',   companyConfig.legal.krs);
+    setText('nipFoot',   companyConfig.legal.nip);
+    setText('regonFoot', companyConfig.legal.regon);
+    setText('addrFoot',  companyConfig.legal.address);
+    setText('emailFoot', companyConfig.contacts.email);
+    setText('phoneFoot', companyConfig.contacts.phone);
+    const elf = document.getElementById('emailLinkFoot'); if(elf){ elf.href = `mailto:${companyConfig.contacts.email}`; }
+    const plf = document.getElementById('phoneLinkFoot'); if(plf){ plf.href = `tel:${companyConfig.contacts.phone.replace(/\s|-/g,'')}`; }
+
+    renderCats();
+    
+
+    // Partners
+    const wall = document.getElementById('brandWall');
+    [...companyConfig.partners.pl, ...companyConfig.partners.de].forEach(p=>{
+      const a=document.createElement('a'); a.href=p.url; a.target='_blank'; a.rel='noopener'; a.className='brand'; a.textContent=p.name; wall.appendChild(a);
+    });
+
+    // ===== Generate 1200 products
+    const grid = document.getElementById('grid');
+    const TITLES_PL = ["Tarcza hamulcowa","Klocki hamulcowe","Filtr oleju","Wtryskiwacz","Chłodnica","Amortyzator","Pompa wody","Cewka zapłonowa","Sprzęgło","Alternator"];
+    const TITLES_EN = ["Brake disc","Brake pads","Oil filter","Injector","Radiator","Shock absorber","Water pump","Ignition coil","Clutch","Alternator"];
+    const CATS_PL = companyConfig.catalog.all_pl;
+    const CATS_EN = companyConfig.catalog.all_en; 
+    // One image per category (EN keys)
+    const CATEGORY_IMAGES = {
+      'Brakes': 'https://images.unsplash.com/photo-1581089781785-eab24e2f4b01?q=80&w=1200&auto=format&fit=crop',
+      'Suspension': 'https://images.unsplash.com/photo-1602321058467-2a2a8e3f4e5e?q=80&w=1200&auto=format&fit=crop',
+      'Filters': 'https://images.unsplash.com/photo-1605719124118-0d61b2257bd3?q=80&w=1200&auto=format&fit=crop',
+      'Engine': 'https://images.unsplash.com/photo-1518306727298-4c17e1bf8d8b?q=80&w=1200&auto=format&fit=crop',
+      'Electrical': 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=1200&auto=format&fit=crop',
+      'Body': 'https://images.unsplash.com/photo-1512406926044-444d1ef55b05?q=80&w=1200&auto=format&fit=crop',
+      'Cooling': 'https://images.unsplash.com/photo-1606925797300-16b4374c1c1e?q=80&w=1200&auto=format&fit=crop',
+      'Clutch': 'https://images.unsplash.com/photo-1607860108855-0a2e2f730ff2?q=80&w=1200&auto=format&fit=crop',
+      'Steering': 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1200&auto=format&fit=crop',
+      'Timing': 'https://images.unsplash.com/photo-1519638399535-1b036603ac77?q=80&w=1200&auto=format&fit=crop'
+    };
+    const products = [];
+    let pageSize = 24; let currentPage = 1; let currentList = [];
+    function pad(n,len){return String(n).padStart(len,'0');}
+    function rnd(min,max){return Math.floor(Math.random()*(max-min+1))+min;}
+    for(let i=1;i<=1200;i++){
+      const catIdx = i % CATS_PL.length;
+      const tIdx = i % TITLES_PL.length;
+      const slug = slugifyCat(CATS_EN[catIdx]);
+      const sku = `KWZ-${pad(i,4)}-${rnd(10,99)}${String.fromCharCode(65+(i%26))}`;
+      const price = `€${(rnd(8,450))}`;
+      products.push({
+        imgLocal: '/assets/categories/'+slug+'.jpg',
+        alt: altForCat(CATS_EN[catIdx]),
+        id:i, sku, cat_pl:CATS_PL[catIdx], cat_en:CATS_EN[catIdx],
+        title_pl:TITLES_PL[tIdx], title_en:TITLES_EN[tIdx],
+        img: (CATEGORY_IMAGES[CATS_EN[catIdx]] || imgFor({ sku, title_en: TITLES_EN[tIdx], cat_en: CATS_EN[catIdx] }, tIdx)),
+        price, tags: (i%3===0?["OEM","EU Stock"]:(i%3===1?["Analog","Budget"]:["OEM"]))
+      });
+    }
+    function slugifyCat(cat){
+  const map = { 'Heavy-duty filters':'heavy-filters', 'Fuel system':'fuel-system' };
+  const base = (cat||'').trim();
+  if(map[base]) return map[base];
+  return base.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'');
+}
+function altForCat(catEn){
+  const dict = {
+    'Brakes':'Tarcza hamulcowa i klocki',
+    'Suspension':'Amortyzator i elementy zawieszenia',
+    'Filters':'Filtr oleju, powietrza i paliwa',
+    'Engine':'Blok silnika i części wewnętrzne',
+    'Electrical':'Alternator i wiązka elektryczna',
+    'Ignition':'Świece zapłonowe i cewka',
+    'Cooling':'Chłodnica i pompa wody',
+    'Clutch':'Zestaw sprzęgła',
+    'Steering':'Przekładnia kierownicza i drążki',
+    'Drivetrain':'Półосie i przeguby',
+    'Body':'Elementy nadwozia',
+    'Lighting':'Reflektor samochodowy',
+    'Hydraulics':'Pompa i przewody hydrauliczne',
+    'PTO':'Wał WOM i elementy sprzęgające',
+    'Heavy-duty filters':'Filtry do maszyn rolniczych',
+    'Fuel system':'Wtryskiwacz i pompa paliwa'
+  };
+  return dict[catEn] || 'Część samochodowa';
+}
+
+    function cardHTML(p){
+      const title = (currentLang==='en'?p.title_en:p.title_pl);
+      return `<div class="card" data-sku="${p.sku}" data-cat-pl="${p.cat_pl}" data-cat-en="${p.cat_en}" data-price="${p.price.replace('€','')}">
+<div class="thumb">${`<img loading="lazy" decoding="async" src="${p.imgLocal||p.img}" onerror="this.onerror=null;this.src='${p.img}'" alt="${p.alt||title}">`}</div>        <div class="meta">
+          <div class="sku">${p.sku}</div>
+          <div class="title">${title}</div>
+          <div class="row"><span class="price">${p.price}</span><button class="mini" data-info>i</button></div>
+          <div class="tags">${p.tags.map(t=>`<span class='tag'>${t}</span>`).join('')}</div>
+          <div class="row" style="margin-top:10px">
+            <button class="mini" data-quick>${t[currentLang].search}</button>
+            <button class="mini brand" data-add>Do koszyka</button>
+          </div>
+        </div>
+      </div>`;
+    }
+
+    function renderGrid(){
+      grid.innerHTML = '';
+      const start = (currentPage-1)*pageSize;
+      const slice = currentList.slice(start, start + pageSize);
+      const frag = document.createDocumentFragment();
+      slice.forEach(p=>{
+        const div = document.createElement('div');
+        div.innerHTML = cardHTML(p);
+        frag.appendChild(div.firstChild);
+      });
+      grid.appendChild(frag);
+      bindProductButtons();
+    }
+
+    function totalPages(){ return Math.max(1, Math.ceil(currentList.length / pageSize)); }
+    function renderPagination(){
+      const pager = document.getElementById('pager');
+      if(!pager) return;
+      pager.innerHTML = '';
+      const tp = totalPages();
+      const addBtn=(label, page, disabled=false, current=false)=>{
+        const b=document.createElement('button');
+        b.className='page-btn';
+        if(current) b.setAttribute('aria-current','true');
+        if(disabled) b.disabled=true;
+        b.textContent=label;
+        if(!disabled && !current){
+          b.addEventListener('click', ()=>{
+            currentPage = page;
+            renderGrid(); renderPagination();
+            window.scrollTo({top: document.getElementById('catalog').offsetTop - 60, behavior:'smooth'});
+          });
+        }
+        pager.appendChild(b);
+      };
+      const addEll=()=>{ const s=document.createElement('span'); s.className='ellipsis'; s.textContent='…'; pager.appendChild(s); };
+
+      addBtn('‹', Math.max(1,currentPage-1), currentPage===1);
+
+      const tpN = tp; const pages=[]; const seen=new Set();
+      pages.push(1);
+      const start = Math.max(2, currentPage-2);
+      const end = Math.min(tpN-1, currentPage+2);
+      if(start>2) addEll();
+      for(let i=start;i<=end;i++) pages.push(i);
+      if(end<tpN-1) addEll();
+      if(tpN>1) pages.push(tpN);
+      pages.forEach(p=>{ if(seen.has(p)) return; seen.add(p); addBtn(String(p), p, false, p===currentPage); });
+
+      addBtn('›', Math.min(tpN,currentPage+1), currentPage===tpN);
+    }
+
+    function bindProductButtons(){
+      grid.querySelectorAll('[data-add]').forEach(btn=>{
+        btn.onclick = (e)=>{
+          const card = e.target.closest('.card');
+          const sku = card.getAttribute('data-sku');
+          const title = card.querySelector('.title').textContent;
+          const price = parseFloat(card.getAttribute('data-price'));
+          addToCart({sku,title,price,qty:1});
+        };
+      });
+      grid.querySelectorAll('[data-quick]').forEach(btn=>{
+        btn.onclick = (e)=>{
+          const card = e.target.closest('.card');
+          const sku = card.getAttribute('data-sku');
+          alert((currentLang==='pl'?'Szybkie info dla ':'Quick info for ')+sku);
+        };
+      });
+    }
+
+    // Preload images for the first page (improves perceived speed)
+    const preloadCount = Math.min(24, products.length);
+    const headEl = document.querySelector('head');
+    for(let j=0;j<preloadCount;j++){
+      const href = products[j].img;
+      if(!href) continue;
+      const ln = document.createElement('link');
+      ln.rel = 'preload'; ln.as = 'image'; ln.href = href;
+      headEl.appendChild(ln);
+    }
+    currentList = products;
+    renderGrid();
+    renderPagination();
+
+    // Language toggle
+    document.querySelectorAll('.lang button').forEach(b=> b.addEventListener('click',()=>setLang(b.dataset.lang)));
+
+    // VIN note
+    document.getElementById('vinBtn').addEventListener('click', ()=>{
+      const q = (document.getElementById('vinInput').value||'').trim();
+      const note = document.getElementById('gridNote');
+      note.textContent = (currentLang==='pl' ? 'Wyniki dla: ' : 'Results for: ')+ (q|| (currentLang==='pl'?'przykładowy VIN':'sample VIN'));
+      note.style.opacity=1;
+      window.scrollTo({top: document.getElementById('catalog').offsetTop - 60, behavior:'smooth'});
+    });
+
+    // Open modals
+    bindModal('btnAccount','modalAccount');
+    bindModal('btnCart','drawerCart');
+    bindModal('btnSearch','modalSearch');
+
+    // Account modal tabs & local validation
+    const tabs = document.querySelectorAll('#modalAccount .tabs .tab');
+    const inner = document.querySelector('#modalAccount .inner');
+    function renderLogin(){
+      inner.innerHTML = `
+        <div class="form">
+          <div class="field"><label>Email</label><input id="accEmail" placeholder="email@example.com"/></div>
+          <div class="field"><label>${currentLang==='pl'?'Hasło':'Password'}</label><input id="accPass" type="password" placeholder="••••••••"/></div>
+          <div class="row"><span style="flex:1"></span><button id="accOk" class="btn brand">OK</button></div>
+        </div>`;
+    }
+    function renderRegister(){
+      inner.innerHTML = `
+        <div class="form">
+          <div class="field"><label>${currentLang==='pl'?'Imię i nazwisko':'Full name'}</label><input id="regName" placeholder="${currentLang==='pl'?'Jan Kowalski':'John Smith'}"/></div>
+          <div class="field"><label>Email</label><input id="regEmail" placeholder="email@example.com"/></div>
+          <div class="field"><label>${currentLang==='pl'?'Hasło':'Password'}</label><input id="regPass" type="password" placeholder="••••••••"/></div>
+          <div class="row"><span style="flex:1"></span><button id="regOk" class="btn brand">${currentLang==='pl'?'Zarejestruj':'Register'}</button></div>
+        </div>`;
+    }
+    function bindAccActions(){
+      const accOk = document.getElementById('accOk');
+      const regOk = document.getElementById('regOk');
+      if(accOk){
+        accOk.onclick = ()=>{
+          const email = (document.getElementById('accEmail')||{}).value||'';
+          if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){ alert(currentLang==='pl'?'Podaj poprawny email':'Enter a valid email'); return; }
+          localStorage.setItem('kwizara_user_email', email);
+          alert(currentLang==='pl'?'Zalogowano':'Logged in');
+        };
+      }
+      if(regOk){
+        regOk.onclick = ()=>{
+          const email = (document.getElementById('regEmail')||{}).value||'';
+          if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){ alert(currentLang==='pl'?'Podaj poprawny email':'Enter a valid email'); return; }
+          localStorage.setItem('kwizara_user_email', email);
+          alert(currentLang==='pl'?'Zarejestrowano':'Registered');
+        };
+      }
+    }
+    renderLogin(); bindAccActions();
+    tabs.forEach((tab,idx)=>{
+      tab.addEventListener('click', ()=>{
+        tabs.forEach(t=>t.classList.remove('active'));
+        tab.classList.add('active');
+        if(idx===0){ renderLogin(); } 
+        else if(idx===1){ renderRegister(); } 
+        else { inner.innerHTML = `<div class="form"><div class="field"><label>${currentLang==='pl'?'Twoje zamówienia':'Your orders'}</label><input placeholder="${currentLang==='pl'?'Brak':'None'}" disabled/></div></div>`; }
+        bindAccActions();
+      });
+    });
+
+    // ==== Filters
+    document.getElementById('catPills').addEventListener('click',(e)=>{
+      if(e.target.classList.contains('pill')){
+        const pills = [...document.querySelectorAll('.pill')];
+        pills.forEach(p=>p.removeAttribute('aria-pressed'));
+        e.target.setAttribute('aria-pressed','true');
+        applyAllFilters();
+      }
+    });
+
+    document.querySelectorAll('.range input')[0].addEventListener('input',applyPrice);
+    document.querySelectorAll('.range input')[1].addEventListener('input',applyPrice);
+
+    function applyPrice(){
+      applyAllFilters();
+    }
+
+    function applyAllFilters(){
+      let list = products;
+
+      const pressed = document.querySelector('#catPills .pill[aria-pressed="true"]');
+      if(pressed){
+        const label = pressed.textContent.trim();
+        list = list.filter(p => (currentLang==='en'?p.cat_en:p.cat_pl)===label);
+      }
+
+      const from = parseFloat((document.querySelectorAll('.range input')[0]||{}).value||'0');
+      const to = parseFloat((document.querySelectorAll('.range input')[1]||{}).value||'999999');
+      list = list.filter(p=>{ const pr = parseFloat(p.price.replace('€','')); return pr>=from && pr<=to; });
+
+      const qEl = document.getElementById('quickSearch');
+      const q = (qEl && qEl.value || '').trim().toLowerCase();
+      if(q){
+        list = list.filter(p=> p.sku.toLowerCase().includes(q) || (currentLang==='en'?p.title_en.toLowerCase():p.title_pl.toLowerCase()).includes(q));
+      }
+
+      currentList = list; currentPage = 1; renderGrid(); renderPagination();
+    }
+
+    // быстрый поиск
+    const qs = document.getElementById('quickSearch');
+    if(qs){ qs.addEventListener('input', applyAllFilters); }
+
+    // кнопки размера страницы
+    document.querySelectorAll('.pagesize .ps').forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        document.querySelectorAll('.pagesize .ps').forEach(b=>b.classList.remove('active'));
+        btn.classList.add('active');
+        pageSize = parseInt(btn.dataset.size,10)||24;
+        currentPage = 1; renderGrid(); renderPagination();
+      });
+    });
+
+    // по умолчанию активна 24
+    const ps24 = document.querySelector('.pagesize .ps[data-size="24"]');
+    if(ps24) ps24.classList.add('active');
+
+    // placeholder поиска при смене языка
+    const setSearchPh = ()=>{ const el=document.getElementById('quickSearch'); if(el){ el.placeholder = (currentLang==='en' ? 'Search by SKU / name' : 'Szukaj po SKU / nazwie'); } };
+    setSearchPh();
+
+    // ==== Cart (localStorage)
+    const cart = JSON.parse(localStorage.getItem('kwizara_cart')||'[]');
+    function saveCart(){ localStorage.setItem('kwizara_cart', JSON.stringify(cart)); updateCartUI(); updateCartBadge(); }
+    function addToCart(item){
+      const found = cart.find(x=>x.sku===item.sku);
+      if(found){ found.qty += item.qty; } else { cart.push(item); }
+      saveCart();
+      document.getElementById('btnCart').classList.add('brand');
+      setTimeout(()=>document.getElementById('btnCart').classList.remove('brand'),600);
+    }
+    function updateCartUI(){
+      const wrap = document.getElementById('cartItems');
+      const total = document.getElementById('cartTotal');
+      if(!wrap) return;
+      wrap.innerHTML = '';
+      let sum = 0;
+      cart.forEach((it,idx)=>{
+        const row = document.createElement('div');
+        row.className='card';
+        row.style.marginTop='10px';
+        const line = it.price*it.qty;
+        sum += line;
+        row.innerHTML = `<div class="meta"><div><b>${it.title}</b> — ${it.sku}</div>
+          <div class="row"><span>€${it.price} × ${it.qty}</span>
+            <div>
+              <button class="mini" data-minus="${idx}">-</button>
+              <button class="mini" data-plus="${idx}">+</button>
+              <button class="mini" data-del="${idx}">×</button>
+            </div>
+          </div></div>`;
+        wrap.appendChild(row);
+      });
+      total.textContent = `€${sum.toFixed(0)}`;
+      wrap.querySelectorAll('[data-minus]').forEach(b=>b.onclick=()=>{ const i=+b.getAttribute('data-minus'); cart[i].qty=Math.max(1,cart[i].qty-1); saveCart(); });
+      wrap.querySelectorAll('[data-plus]').forEach(b=>b.onclick=()=>{ const i=+b.getAttribute('data-plus'); cart[i].qty++; saveCart(); });
+      wrap.querySelectorAll('[data-del]').forEach(b=>b.onclick=()=>{ const i=+b.getAttribute('data-del'); cart.splice(i,1); saveCart(); });
+    }
+    function updateCartBadge(){
+      const b = document.getElementById('cartBadge');
+      if(!b) return;
+      const totalQty = cart.reduce((s,it)=>s+it.qty,0);
+      b.textContent = String(totalQty);
+      b.hidden = totalQty<=0;
+    }
+    document.getElementById('cartCheckout').addEventListener('click', ()=>{
+      alert(currentLang==='pl'?'Podsumowanie koszyka zapisane lokalnie.':'Cart summary saved locally.');
+      saveCart();
+    });
+    updateCartUI();
+
+    setLang(companyConfig.ui.defaultLang);
+    applyAllFilters();
+  });
+
+  function bindModal(btnId, modalId){
+    const btn = document.getElementById(btnId), modal=document.getElementById(modalId), overlay=document.getElementById('overlay');
+    if(!btn||!modal) return;
+    const open=()=>{modal.style.display='block'; overlay.style.display='block';}
+    const close=()=>{modal.style.display='none'; overlay.style.display='none';}
+    btn.addEventListener('click',open);
+    overlay.addEventListener('click',close);
+    modal.querySelectorAll('[data-close]')?.forEach(x=>x.addEventListener('click',close));
+  }
+
+  function svgPart(){
+    return `<svg viewBox='0 0 64 64' fill='none' xmlns='http://www.w3.org/2000/svg'>
+      <rect x='6' y='18' width='52' height='28' rx='6' stroke='white' opacity='.9'/>
+      <circle cx='20' cy='48' r='6' fill='white' opacity='.9'/>
+      <circle cx='44' cy='48' r='6' fill='white' opacity='.9'/>
+      <path d='M10 24h44' stroke='white' opacity='.9'/>
+    </svg>`
+  }
+</script>
+
+<header>
+  <div class="container nav">
+    <div class="logo">
+      <div class="logo-badge" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M3 15h7l2-6h9" stroke="white" stroke-width="2" stroke-linecap="round"/><circle cx="9" cy="18" r="2" fill="white"/><circle cx="17" cy="18" r="2" fill="white"/></svg>
+      </div>
+      <span id="brandName"></span>
+    </div>
+    <nav class="nav-links">
+      <a href="#vin" data-i18n="nav_vin">VIN/OEM</a>
+      <a href="#catalog" data-i18n="nav_cat">Katalogi</a>
+      <a href="#how" data-i18n="nav_how">Jak to działa</a>
+      <a href="#suppliers" data-i18n="nav_sup">Dostawcy</a>
+      <a href="#contacts" data-i18n="nav_contact">Kontakt</a>
+    </nav>
+    <div class="actions">
+      <button class="btn" id="btnSearch" data-i18n="search">Szukaj</button>
+      <button class="btn" id="btnCart" data-i18n="cart">Koszyk<span id="cartBadge" class="badge-count" hidden>0</span></button>
+      <button class="btn brand" id="btnAccount" data-i18n="account">Konto</button>
+      <div class="lang">
+        <button class="active" data-lang="pl">PL</button>
+        <button data-lang="en">EN</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="vin">
+  <div class="container hero-wrap">
+    <div>
+      <div class="chip" data-i18n="hero_chip">Sklep części • B2B & C2B • EU dostawy</div>
+      <h1 data-i18n="hero_h1">Znajdujemy części po VIN i OEM w sekundy</h1>
+      <p id="tagline">Oryginały i sprawdzone analogi — B2B/C2B dostawy EU</p>
+      <p class="small" data-i18n="hero_p">Wpisz VIN/Frame lub numer OEM – pokażemy oryginał i sprawdzone odpowiedniki.</p>
+      <div class="form-row">
+        <label class="input">
+          <svg width="20" viewBox="0 0 24 24" fill="none"><path d="M4 9h16M7 16h10M6 3h12a3 3 0 0 1 3 3v12l-5-3H6a3 3 0 0 1-3-3V6a3 3 0 0 1 3-3Z" stroke="white" stroke-width="1.5"/></svg>
+          <input id="vinInput" maxlength="17" placeholder="Np.: WDB9066331S123456 (max 17 znaków)" />
+        </label>
+        <button class="btn brand" id="vinBtn" data-i18n="hero_btn">Szukaj po VIN</button>
+      </div>
+      <div class="help" data-i18n="hero_help">Obsługa VIN (EU/US), Frame (JP), numer OEM.</div>
+    </div>
+    <div class="hero-card">
+      <div class="gauge"><span>VIN • OEM</span></div>
+
+      <!-- NEW HERO IMAGE -->
+      <div class="hero-img">
+        <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=1600&auto=format&fit=crop" alt="Części i komponenty — magazyn" loading="lazy" decoding="async" />
+      </div>
+
+      <div class="hero-stats">
+        <div class="kpi"><div class="v">24h</div><div class="l">Lead time</div></div>
+        <div class="kpi"><div class="v">EU</div><div class="l">Logistyka</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CATEGORIES -->
+<section class="container">
+  <div class="section-head"><h2 data-i18n="cats_h2">Popularne kategorie</h2></div>
+  <div class="cat-scroll" id="catPills"></div>
+</section>
+
+<!-- CATALOG -->
+<section class="container" id="catalog">
+  <div class="section-head">
+    <h2 data-i18n="catalog_h2">Katalog produktów</h2>
+    <div class="small" id="gridNote" style="opacity:.7" data-i18n="grid_demo_note"></div>
+  </div>
+  <div class="catalog">
+    <aside class="filters">
+      <h3 data-i18n="filters">Filtry</h3>
+      <div class="group"><b data-i18n="f_category">Kategoria</b>
+        <label class="check"><input type="checkbox"/> Hamulce</label>
+        <label class="check"><input type="checkbox"/> Zawieszenie</label>
+        <label class="check"><input type="checkbox"/> Filtry</label>
+      </div>
+      <div class="group"><b data-i18n="f_brand">Marka</b>
+        <label class="check"><input type="checkbox"/> OEM</label>
+        <label class="check"><input type="checkbox"/> Analog</label>
+      </div>
+      <div class="group"><b data-i18n="f_price">Cena</b>
+        <div class="range"><input placeholder="€ od"/><input placeholder="€ do"/></div>
+      </div>
+    </aside>
+    <div>
+      <div class="toolbar">
+        <label class="input search">
+          <svg width="18" viewBox="0 0 24 24" fill="none"><path d="M11 19a8 8 0 1 1 0-16 8 8 0 0 1 0 16Zm10 2-6-6" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
+          <input id="quickSearch" placeholder="Szukaj po SKU / nazwie" />
+        </label>
+        <div class="pagesize">
+          <span class="small">Pokaż po:</span>
+          <button class="mini ps" data-size="24">24</button>
+          <button class="mini ps" data-size="50">50</button>
+          <button class="mini ps" data-size="100">100</button>
+        </div>
+      </div>
+      <div class="grid" id="grid"></div>
+      <div id="pager" class="pager"></div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="container" id="how">
+  <div class="section-head"><h2 data-i18n="how_h2">Jak to działa</h2></div>
+  <div class="steps">
+    <div class="step" data-i18n="how_1">1) Podajesz VIN lub zapytanie (B2B/C2B)</div>
+    <div class="step" data-i18n="how_2">2) Dobieramy oryginał/analog, terminy i ofertę</div>
+    <div class="step" data-i18n="how_3">3) Dostawa/odbiór: EXW • FCA • DAP</div>
+  </div>
+</section>
+
+<!-- SUPPLIERS -->
+<section class="container" id="suppliers">
+  <div class="section-head"><h2 data-i18n="sup_h2">Planowani dostawcy (PL/DE)</h2></div>
+  <div class="brandwall" id="brandWall"></div>
+</section>
+
+<!-- ABOUT -->
+<section class="container" id="about">
+  <div class="section-head"><h2 data-i18n="about_h2">O spółce</h2></div>
+  <p data-i18n="about_p">KWIZARA TRADING Sp. z o.o. — polska spółka handlowa (B2B/C2B) zaopatrzenia i dostaw części oraz komponentów do maszyn rolniczych i sprzętu specjalistycznego. Współpracujemy ze sprawdzonymi hurtowniami z Polski i Niemiec, realizując sprzedaż transgraniczną w UE.</p>
+  <div class="grid" style="--cols:3; margin-top:12px">
+    <div class="card"><div class="meta">
+      <b data-i18n="legal_title">Informacje prawne</b>
+      <div class="small">KRS: <span id="krs"></span> • NIP: <span id="nip"></span> • REGON: <span id="regon"></span></div>
+      <div class="small">PKD: <span id="pkd"></span></div>
+      <div class="small">Kapitał: <span id="capital"></span></div>
+      <div class="small">Zarządzanie: <span id="mgmt"></span></div>
+      <div class="small">Adres: <span id="addr"></span></div>
+    </div></div>
+    <div class="card"><div class="meta">
+      <b>Kontakt</b>
+      <div class="small">Email: <a id="emailLink" href="#"><span id="email"></span></a></div>
+      <div class="small">Telefon: <a id="phoneLink" href="#"><span id="phone"></span></a></div>
+      <div class="small">Godziny: <span id="hours"></span></div>
+      <div class="small">Domena: <span id="domain"></span></div>
+    </div></div>
+    <!-- NEW About image card -->
+    <div class="card"><div class="meta">
+      <b>Magazyn / Warehouse</b>
+      <div class="thumb" style="border-radius:12px;margin-top:10px">
+        <img src="https://images.unsplash.com/photo-1515165562835-c3b8c8a1c7a5?q=80&w=1400&auto=format&fit=crop" alt="Warehouse" loading="lazy" decoding="async" />
+      </div>
+    </div></div>
+  </div>
+</section>
+
+<!-- CONTACTS -->
+<section class="container" id="contacts">
+  <div class="section-head"><h2 data-i18n="contact_h2">Kontakt</h2></div>
+  <div class="grid" style="--cols:2">
+    <div class="card"><div class="meta">
+      <b data-i18n="form_h">Zostaw zapytanie</b>
+      <div class="form">
+        <div class="field"><label data-i18n="form_name">Imię i nazwisko</label><input placeholder="Jan Kowalski"/></div>
+        <div class="field"><label data-i18n="form_email">E-mail</label><input placeholder="email@example.com"/></div>
+        <div class="field"><label data-i18n="form_msg">Treść zapytania</label><textarea rows="4" placeholder="Szukam części…"></textarea></div>
+        <div class="row"><span style="flex:1"></span><button class="btn brand" data-i18n="form_send">Wyślij</button></div>
+      </div>
+    </div></div>
+    <div class="card"><div class="meta">
+      <b>Warszawa</b>
+      <div class="small">Al. Jana Pawła II 11, lok. 209, 00-828 Warszawa</div>
+      <div class="thumb" style="aspect-ratio:16/9; border-radius:12px; margin-top:10px">
+        <img src="https://images.unsplash.com/photo-1528909514045-2fa4ac7a08ba?q=80&w=1600&auto=format&fit=crop" alt="Warszawa" loading="lazy" decoding="async" />
+      </div>
+    </div></div>
+  </div>
+</section>
+
+<!-- CART DRAWER -->
+<div class="overlay" id="overlay"></div>
+<div class="drawer" id="drawerCart">
+  <div class="row" style="align-items:center">
+    <b data-i18n="cart">Koszyk</b><span style="flex:1"></span>
+    <button data-close class="btn">×</button>
+  </div>
+  <div id="cartItems" style="margin-top:10px"></div>
+  <div class="row" style="margin-top:12px"><b id="cartTotal">€0</b><span style="flex:1"></span><button class="btn brand" id="cartCheckout">Faktura</button></div>
+</div>
+
+<!-- ACCOUNT MODAL -->
+<div class="modal" id="modalAccount">
+  <header class="row"><b data-i18n="account">Konto</b><span style="flex:1"></span><button data-close class="btn">×</button></header>
+  <div class="tabs"><div class="tab active">Login</div><div class="tab">Rejestracja</div><div class="tab">Zamówienia</div></div>
+  <div class="inner"></div>
+  <div class="foot"><button data-close class="btn">Zamknij</button></div>
+</div>
+
+<!-- SEARCH MODAL -->
+<div class="modal" id="modalSearch">
+  <header class="row"><b data-i18n="search">Szukaj</b><span class="spacer"></span><button data-close class="btn">×</button></header>
+  <div class="inner">
+    <div class="field"><label>VIN/OEM</label><input placeholder="WDB… / 06J…"/></div>
+    <div class="field"><label>Fraza</label><input placeholder="np. tarcza hamulcowa"/></div>
+  </div>
+  <div class="foot"><button data-close class="btn brand">OK</button></div>
+</div>
+
+<footer>
+  <div class="container footgrid">
+    <div>
+      <div style="display:flex;align-items:center;gap:10px">
+        <div class="logo-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M3 15h7l2-6h9" stroke="white" stroke-width="2" stroke-linecap="round"/><circle cx="9" cy="18" r="2" fill="white"/><circle cx="17" cy="18" r="2" fill="white"/></svg></div>
+        <div>
+          <b id="brandNameFoot">KWIZARA TRADING Sp. z o.o.</b>
+          <div class="small" id="taglineFoot">B2B/C2B EU supply</div>
+        </div>
+      </div>
+      <div class="small" style="margin-top:8px">KRS: <span id="krsFoot"></span> • NIP: <span id="nipFoot"></span> • REGON: <span id="regonFoot"></span></div>
+      <div class="small">© <span id="year"></span> KWIZARA TRADING</div>
+    </div>
+    <div>
+      <b data-i18n="footer_title">Szybkie linki</b>
+      <div class="small"><a href="#" onclick="document.getElementById('modalSearch').style.display='block';document.getElementById('overlay').style.display='block'" data-i18n="search">Szukaj</a></div>
+      <div class="small"><a href="polityka-prywatnosci.html" data-i18n="policy">Polityka prywatności</a></div>
+      <div class="small"><a href="regulamin.html" data-i18n="terms">Regulamin</a></div>
+      <div class="small"><a href="zwroty-reklamacje.html" data-i18n="returns">Zwroty i reklamacje</a></div>
+    </div>
+    <div>
+      <b>Adres</b>
+      <div class="small" id="addrFoot"></div>
+    </div>
+    <div>
+      <b data-i18n="nav_contact">Kontakt</b>
+      <div class="small">Email: <a id="emailLinkFoot" href="#"><span id="emailFoot"></span></a></div>
+      <div class="small">Tel.: <a id="phoneLinkFoot" href="#"><span id="phoneFoot"></span></a></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  const syncFoot=()=>{ document.getElementById('taglineFoot').textContent = (companyConfig.brand.tagline[currentLang]||companyConfig.brand.tagline.pl); };
+  const mo = new MutationObserver(syncFoot); mo.observe(document.documentElement,{attributes:true,attributeFilter:['lang']}); syncFoot();
+</script>
+</body>
+</html>
